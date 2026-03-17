@@ -57,7 +57,7 @@ LibraryManagementSystem/
 | Role     | Email               | Password |
 |----------|---------------------|----------|
 | Admin    | admin@library.com   | admin123 |
-| Borrower | alice@student.com   | alice123 |
+| Borrower | sathya@student.com   | sathya123 |
 
 ### Compile and Run
 
