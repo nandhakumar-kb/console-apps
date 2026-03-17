@@ -1,79 +1,142 @@
-# Library Management System (Java Console App)
+# Java Console Applications
 
-A simple and beginner-friendly monolith console application built using Java.
+A collection of simple, beginner-friendly monolith console applications built using Java.
 
-## Project Structure
+---
 
-- `src/` -> Java source code
-- `bytecode/` -> compiled `.class` files
+## 1. Library Management System
 
-## Features
+A console-based library management system for Borrowers and Administrators.
 
-### Module A: Authentication and Welcome Menu
+### Project Structure
+
+```
+LibraryManagementSystem/
++-- src/         -> Java source code
++-- bytecode/    -> compiled .class files
+```
+
+### Modules
+
+**Module A: Authentication and Welcome Menu**
 - Login for Admin and Borrower using email and password
 - Role-based menu after successful login
 
-### Module B: Book Inventory Management (Admin)
-- Add book
-- Modify book details (name, author, quantity, price)
-- Delete book
+**Module B: Book Inventory Management (Admin)**
+- Add, modify, delete books
 - View books sorted by name or available quantity
 - Search book by name or ISBN
 - Add Admin and Borrower users
 - Manage borrower security deposit
 
-### Module C: Borrowing Book (Borrower)
+**Module C: Borrowing Book (Borrower)**
 - View available books
 - Add/remove books in checkout cart
-- Checkout books from cart
 - Maximum 3 books at a time
 - Cannot borrow same book twice
 - Minimum security deposit required: Rs 500
 
-### Module D: Fine and Regulations
+**Module D: Fine and Regulations**
 - Initial borrower security deposit: Rs 1500
-- Late return fine:
-  - First 10 overdue days: Rs 2/day
-  - Fine doubles every next 10-day block
-  - Maximum fine capped at 80% of book cost
+- Late return fine: Rs 2/day, doubles every 10-day block, capped at 80% of book cost
 - Lost book fine: 50% of book cost
 - Membership card lost fine: Rs 10
-- Fine payment modes:
-  - Cash
-  - Deduct from security deposit
-- Borrower options per transaction:
-  - Extend tenure (max 2 times)
-  - Exchange book
-  - Mark book as lost
+- Payment via cash or security deposit deduction
+- Extend tenure (max 2 times), exchange book, mark book as lost
 
-### Module E: Reports
-Admin can view:
-- Low stock books
-- Never borrowed books
-- Heavily borrowed books
+**Module E: Reports (Admin)**
+- Low stock books, never borrowed books, heavily borrowed books
 - Outstanding books as on a given date
-- Active status of book by ISBN and borrower details
+- Active book status by ISBN with borrower details
 
-Borrower can view:
-- Fine history
-- Borrow history
+**Reports (Borrower)**
+- Fine history and borrow history
 
-## Default Login Credentials
+### Default Login Credentials
 
-### Admin
-- Email: admin@library.com
-- Password: admin123
+| Role     | Email               | Password |
+|----------|---------------------|----------|
+| Admin    | admin@library.com   | admin123 |
+| Borrower | alice@student.com   | alice123 |
 
-### Borrower
-- Email: sathya@student.com
-- Password: sathya123
-
-## Compile and Run
-
-Run these commands from project root:
+### Compile and Run
 
 ```bash
+cd LibraryManagementSystem
 javac -d bytecode -sourcepath src src/library/Main.java
 java -cp bytecode library.Main
 ```
 
+---
+
+## 2. Super Market Billing System
+
+A console-based supermarket billing system for Customers and Administrators.
+
+### Project Structure
+
+```
+SuperMarketBillingSystem/
++-- src/         -> Java source code
++-- bytecode/    -> compiled .class files
+```
+
+### Modules
+
+**Module A: Authentication and Welcome Menu**
+- Login for Admin and Customer using email and password
+- Role-based menu after successful login
+
+**Module B: Inventory Management (Admin)**
+- Add, modify, delete products
+- View products sorted by name or price
+- Search product by name
+- Add Admin and Customer users
+- Increase customer credit balance
+
+**Module C: Customer Purchase**
+- View available products
+- Add products to cart by Product ID and quantity
+- Add same product multiple times (quantity merges)
+- Edit quantities or remove items from cart
+- Proceed to checkout
+
+**Module D: Payment and Rewards**
+- Initial customer credit: Rs 1000
+- Purchase only within credit limit
+- Reward system:
+  - Bill >= Rs 5000: Rs 100 cashback to wallet (no loyalty points)
+  - Every Rs 100 spent: 1 Loyalty Point; 50 points = Rs 100 discount on next bill
+
+**Module E: Purchase History**
+- View all bills with date and amount
+- View detailed itemized bill by bill number
+
+**Module F: Reports (Admin)**
+- Low stock products, never sold products
+- Top customers by spending value
+- Top selling admins
+- Top sold products
+
+### Default Login Credentials
+
+| Role     | Email                   | Password |
+|----------|-------------------------|----------|
+| Admin    | admin@supermarket.com   | admin123 |
+| Customer | john@customer.com       | john123  |
+
+### Compile and Run
+
+```bash
+cd SuperMarketBillingSystem
+javac -d bytecode -sourcepath src src/supermarket/Main.java
+java -cp bytecode supermarket.Main
+```
+
+---
+
+## Notes
+
+- Both projects use in-memory data storage (no database)
+- Data resets each time the application restarts
+- Designed to be simple and easy to understand for beginners
