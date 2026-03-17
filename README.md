@@ -123,7 +123,7 @@ SuperMarketBillingSystem/
 | Role     | Email                   | Password |
 |----------|-------------------------|----------|
 | Admin    | admin@supermarket.com   | admin123 |
-| Customer | john@customer.com       | john123  |
+| Customer | sathya@customer.com       | sathya123  |
 
 ### Compile and Run
 
