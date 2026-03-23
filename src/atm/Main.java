@@ -26,7 +26,6 @@ public class Main {
 
         if (!loggedIn) {
             System.out.println("Too many wrong attempts. Account locked.");
-            sc.close();
             return;
         }
 
@@ -67,7 +66,5 @@ public class Main {
                 System.out.println("Invalid choice.");
             }
         } while (choice != 4);
-
-        sc.close();
     }
 }

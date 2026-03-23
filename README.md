@@ -1,20 +1,45 @@
 # Java Console Applications
 
-A collection of simple, beginner-friendly console applications built using Java.
+A single beginner-friendly Java console project with one launcher and three modules.
+
+---
+
+## Project Structure
+
+```
+console-apps-main/
++-- src/
+|   +-- app/          -> common launcher
+|   +-- library/      -> Library Management System
+|   +-- supermarket/  -> Super Market Billing System
+|   +-- atm/          -> ATM Simulation
++-- bytecode/         -> compiled .class files
++-- README.md
+```
+
+---
+
+## Launcher
+
+Run one menu and choose any module:
+
+1. Library Management System
+2. Super Market Billing System
+3. ATM Simulation
+4. Exit
+
+### Compile and Run Launcher
+
+```bash
+javac -d bytecode -sourcepath src src/app/Main.java
+java -cp bytecode app.Main
+```
 
 ---
 
 ## 1. Library Management System
 
 A console-based library management system for Borrowers and Administrators.
-
-### Project Structure
-
-```
-LibraryManagementSystem/
-+-- src/         -> Java source code
-+-- bytecode/    -> compiled .class files
-```
 
 ### Modules
 
@@ -62,7 +87,6 @@ LibraryManagementSystem/
 ### Compile and Run
 
 ```bash
-cd LibraryManagementSystem
 javac -d bytecode -sourcepath src src/library/Main.java
 java -cp bytecode library.Main
 ```
@@ -72,14 +96,6 @@ java -cp bytecode library.Main
 ## 2. Super Market Billing System
 
 A console-based supermarket billing system for Customers and Administrators.
-
-### Project Structure
-
-```
-SuperMarketBillingSystem/
-+-- src/         -> Java source code
-+-- bytecode/    -> compiled .class files
-```
 
 ### Modules
 
@@ -128,7 +144,6 @@ SuperMarketBillingSystem/
 ### Compile and Run
 
 ```bash
-cd SuperMarketBillingSystem
 javac -d bytecode -sourcepath src src/supermarket/Main.java
 java -cp bytecode supermarket.Main
 ```
@@ -138,14 +153,6 @@ java -cp bytecode supermarket.Main
 ## 3. ATM Simulation
 
 A console-based ATM simulation with basic banking operations.
-
-### Project Structure
-
-```
-ATMSimulation/
-+-- src/         -> Java source code
-+-- bytecode/    -> compiled .class files
-```
 
 ### Features
 
@@ -162,7 +169,6 @@ ATMSimulation/
 ### Compile and Run
 
 ```bash
-cd ATMSimulation
 javac -d bytecode -sourcepath src src/atm/Main.java
 java -cp bytecode atm.Main
 ```
