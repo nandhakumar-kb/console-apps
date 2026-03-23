@@ -1,6 +1,6 @@
 # Java Console Applications
 
-A collection of simple, beginner-friendly monolith console applications built using Java.
+A collection of simple, beginner-friendly console applications built using Java.
 
 ---
 
@@ -135,8 +135,42 @@ java -cp bytecode supermarket.Main
 
 ---
 
+## 3. ATM Simulation
+
+A console-based ATM simulation with basic banking operations.
+
+### Project Structure
+
+```
+ATMSimulation/
++-- src/         -> Java source code
++-- bytecode/    -> compiled .class files
+```
+
+### Features
+
+- PIN login with 3 attempts
+- Check account balance
+- Deposit money
+- Withdraw money
+- Exit
+
+### Default PIN
+
+- 1234
+
+### Compile and Run
+
+```bash
+cd ATMSimulation
+javac -d bytecode -sourcepath src src/atm/Main.java
+java -cp bytecode atm.Main
+```
+
+---
+
 ## Notes
 
-- Both projects use in-memory data storage (no database)
+- All three projects use in-memory data storage (no database)
 - Data resets each time the application restarts
 - Designed to be simple and easy to understand for beginners
