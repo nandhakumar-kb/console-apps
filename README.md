@@ -1,6 +1,6 @@
 # Java Console Applications
 
-A single beginner-friendly Java console project with one launcher and three modules.
+A single beginner-friendly Java console project with one launcher and four modules.
 
 ---
 
@@ -13,6 +13,7 @@ console-apps-main/
 |   +-- library/      -> Library Management System
 |   +-- supermarket/  -> Super Market Billing System
 |   +-- atm/          -> ATM Simulation
+|   +-- vehiclerental/-> Vehicle Rental System
 +-- bytecode/         -> compiled .class files
 +-- README.md
 ```
@@ -26,7 +27,8 @@ Run one menu and choose any module:
 1. Library Management System
 2. Super Market Billing System
 3. ATM Simulation
-4. Exit
+4. Vehicle Rental System
+5. Exit
 
 ### Compile and Run Launcher
 
@@ -175,8 +177,84 @@ java -cp bytecode atm.Main
 
 ---
 
+## 4. Vehicle Rental System
+
+A monolith console-based vehicle rental system for Borrowers and Administrators.
+
+### Modules
+
+**Module A: Sign In and Sign Up**
+- Login for Admin and Borrower using email and password
+- Signup support for both roles
+- Role-based welcome menus after authentication
+
+**Module B: Vehicle Inventory (Admin)**
+- Add, modify, and delete vehicles (Car/Bike)
+- View all vehicles sorted by name or available count
+- Search vehicles by name or number plate
+- Change borrower security deposit amount
+- Mark vehicles as serviced to re-enable catalog listing
+
+**Module C: Renting a Vehicle (Borrower)**
+- View available catalog of cars and bikes
+- Add/remove vehicles in checkout cart
+- Borrower can rent only one car and one bike at a time
+- Checkout validates minimum deposit:
+  - Bike: Rs 3000
+  - Car: Rs 10000
+
+**Module D: Fine and Regulations**
+- Initial caution deposit per borrower: Rs 30000
+- Vehicle rented for same-day return by default
+- Additional 15% fine if usage exceeds 500 km/day
+- Car damage labels and fine multipliers:
+  - LOW: 20%
+  - MEDIUM: 50%
+  - HIGH: 75%
+- Service regulation:
+  - Car service due at 3000 km
+  - Bike service due at 1500 km
+  - Service-due vehicles are hidden from catalog
+- Fine payment mode:
+  - Cash
+  - Deduct from security deposit
+- Transaction actions supported per rental:
+  - Extend tenure (max 2 consecutive extensions)
+  - Exchange vehicle
+  - Mark vehicle as lost
+  - Return vehicle
+
+**Module E: Reports**
+
+Admin can view:
+- Vehicles due for service
+- All vehicles sorted by rental price
+- Search by name and filter by Car/Bike
+- Rented-out vehicles
+- Never-rented vehicles
+
+Borrowers can view:
+- Previous rentals
+- Fine history
+
+### Default Login Credentials
+
+| Role     | Email            | Password |
+|----------|------------------|----------|
+| Admin    | admin@rental.com | admin123 |
+| Borrower | kiran@user.com   | kiran123 |
+
+### Compile and Run
+
+```bash
+javac -d bytecode -sourcepath src src/vehiclerental/Main.java
+java -cp bytecode vehiclerental.Main
+```
+
+---
+
 ## Notes
 
-- All three projects use in-memory data storage (no database)
+- All four projects use in-memory data storage (no database)
 - Data resets each time the application restarts
 - Designed to be simple and easy to understand for beginners
