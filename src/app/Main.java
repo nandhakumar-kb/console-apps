@@ -13,7 +13,8 @@ public class Main {
             System.out.println("1. Library Management System");
             System.out.println("2. Super Market Billing System");
             System.out.println("3. ATM Simulation");
-            System.out.println("4. Exit");
+            System.out.println("4. Vehicle Rental System");
+            System.out.println("5. Exit");
             System.out.print("Choose: ");
 
             String input = sc.nextLine().trim();
@@ -25,10 +26,12 @@ public class Main {
             } else if (input.equals("3")) {
                 atm.Main.main(new String[0]);
             } else if (input.equals("4")) {
+                vehiclerental.Main.main(new String[0]);
+            } else if (input.equals("5")) {
                 System.out.println("Goodbye!");
                 break;
             } else {
-                System.out.println("Please enter 1, 2, 3, or 4.");
+                System.out.println("Please enter 1, 2, 3, 4, or 5.");
             }
 
             System.out.println();
